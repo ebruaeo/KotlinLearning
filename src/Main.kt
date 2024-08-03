@@ -21,17 +21,54 @@ fun main(args: Array<String>) {
             val positions = input.split(",")
             x = positions[0].trim().toInt()
             y = positions[1].trim().toInt()
+            var skipRound = false
 
             if (board[x - 1][y - 1] != "") {
                 println("That position is already taken")
+                skipRound = true
             } else {
                 board[x - 1][y - 1] = "X"
                 printBoard()
             }
+            if (!skipRound) {
+                val playerWon = checkWinner(true)
+                if (playerWon) {
+                    println("\uD83C\uDF7E \uD83C\uDF8A \uD83C\uDF89 \uD83C\uDF7E \uD83C\uDF8A \uD83C\uDF89 \uD83C\uDF7E \uD83C\uDF8A \uD83C\uDF89")
+                    println("You won. Congratulations!")
+                    continueGame = false
+                }
+            }
+
+
         } catch (e: Exception) {
             println("Invalid input please try again")
         }
     } while (continueGame)
+}
+
+fun checkWinner(player: Boolean): Boolean {
+    var won = false
+    var checkSymbol = if (player) "X" else "O"
+    for (i in 0..2) {
+        //Horizontal wins
+        if (board[i][0] == checkSymbol && board[i][1] == checkSymbol && board[i][2] == checkSymbol) {
+            won = true
+            break
+        }
+        // vertical wins
+        if (board[0][i] == checkSymbol && board[1][i] == checkSymbol && board[2][i] == checkSymbol) {
+            won = true
+            break
+        }
+    }
+    // Diagonal Wins
+    if (board[0][0] == checkSymbol && board[1][1] == checkSymbol && board[2][2] == checkSymbol) {
+        won = true
+    }
+    if (board[2][0] == checkSymbol && board[1][1] == checkSymbol && board[0][2] == checkSymbol) {
+        won = true
+    }
+    return won
 }
 
 fun printBoard() {
