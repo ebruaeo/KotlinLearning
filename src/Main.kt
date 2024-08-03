@@ -37,6 +37,12 @@ fun main(args: Array<String>) {
                     println("You won. Congratulations!")
                     continueGame = false
                 }
+
+                val boardFull = checkBoardFull()
+                if (!playerWon && boardFull) {
+                    println("Its a tie")
+                    continueGame = false
+                }
             }
 
 
@@ -69,6 +75,20 @@ fun checkWinner(player: Boolean): Boolean {
         won = true
     }
     return won
+}
+
+fun checkBoardFull(): Boolean {
+    var boardFull = true
+    for (i in 0..2) {
+        for (j in 0..2) {
+            if (board[i][j] == "") {
+                boardFull = false
+                break
+
+            }
+        }
+    }
+    return boardFull
 }
 
 fun printBoard() {
