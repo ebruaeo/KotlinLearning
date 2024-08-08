@@ -1,3 +1,5 @@
+package inheritance
+
 fun main() {
     val boeing737 = Boeing()
     val a320 = Airbus()

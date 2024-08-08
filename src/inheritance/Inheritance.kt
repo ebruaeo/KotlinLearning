@@ -1,3 +1,5 @@
+package inheritance
+
 fun main() {
     val myDog = Corgi()
     myDog.size = 10

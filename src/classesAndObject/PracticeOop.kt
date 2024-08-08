@@ -1,3 +1,5 @@
+package classesAndObject
+
 fun main(args: Array<String>) {
     val cat = Animal()
     cat.run()

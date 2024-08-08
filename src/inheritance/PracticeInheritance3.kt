@@ -1,3 +1,5 @@
+package inheritance
+
 fun main() {
     val engineer = Engineer()
     engineer.name = "Engineer"
