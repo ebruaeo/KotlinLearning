@@ -1,3 +1,5 @@
+package inheritance
+
 fun main() {
     val myLaptop = Laptop()
     val myApple = Apple()

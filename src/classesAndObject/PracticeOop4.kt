@@ -1,3 +1,5 @@
+package classesAndObject
+
 fun main() {
     val n = Calculator()
     n.addNumber(47.0)

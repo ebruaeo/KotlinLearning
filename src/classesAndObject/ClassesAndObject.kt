@@ -1,3 +1,5 @@
+package classesAndObject
+
 fun main() {
     val animal: ArrayList<String> = arrayListOf<String>()
     val table = Table()
