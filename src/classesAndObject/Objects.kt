@@ -1,3 +1,5 @@
+package classesAndObject
+
 fun main() {
     if (DatabaseAccess.connected) {
         DatabaseAccess.disconnect()

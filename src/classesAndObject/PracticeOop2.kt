@@ -1,3 +1,5 @@
+package classesAndObject
+
 fun main() {
     val math = Math()
     println("3 + 7 = ${math.add(3, 7)}")

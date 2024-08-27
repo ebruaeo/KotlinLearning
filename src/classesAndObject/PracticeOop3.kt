@@ -1,3 +1,5 @@
+package classesAndObject
+
 fun main() {
 val jetpack = Jetpack()
     jetpack.burn(10)
