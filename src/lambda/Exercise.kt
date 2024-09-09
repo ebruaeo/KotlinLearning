@@ -9,6 +9,12 @@ fun main() {
     lambda()
     lambda2()
     lambda3()
+    facLambda(7)
+    findMaxLambda(arrayListOf(23, 45, 12, 78, 0))
+    countVowels("Ömer")
+    sumOddNumbers(arrayListOf(3, 1, 12, 7, 0))
+    conStrings("minnie", "Mia")
+    averageSquare(arrayListOf(2,4,5,6))
 }
 
 
@@ -72,6 +78,74 @@ val lambda3 = {
     println(upperCaseList)
 }
 
+//?Write an anonymous Kotlin function to check if a string is a palindrome.
+
+//!Write an anonymous Kotlin function to calculate the factorial of a number.
+val facLambda = { number: Int ->
+    var fact = 1
+    for (i in number downTo 1) {
+        fact *= i
+    }
+    println(fact)
+}
+
+//?Write an anonymous Kotlin function to find the maximum element in an array.
+val findMaxLambda = { list: List<Int> ->
+    var max = list[0]
+    for (i in list) {
+        if (i > max) {
+            max = i
+        }
+    }
+    println("Maximum element $max")
+}
+
+//!Write an anonymous Kotlin function to count the number of vowels in a string.
+var vowels = "aeıioöuüAEIİOÖUÜ"
+var countVowels = { str: String ->
+    var count = 0
+    for (i in str) {
+        if (vowels.contains(i)) {
+            count++
+        }
+    }
+    println("Vowels = $count")
+}
+
+//? Write an anonymous Kotlin function to calculate the sum of all odd numbers in a list.
+
+val sumOddNumbers = { list: List<Int> ->
+    var sum = 0
+    for (i in list) {
+        if (i % 2 != 0) {
+            sum += i
+        }
+    }
+    println("Odd numbers sum = $sum")
+}
+
+
+//!Write an anonymous Kotlin function to concatenate two strings and return the result.
+
+val conStrings = { str: String, str2: String ->
+    var result = str + str2
+    println(result)
+}
+
+//?Write an anonymous Kotlin function to find the average of the squares of a list of numbers.
+
+val averageSquare = { list: List<Int> ->
+    var squareList = arrayListOf<Int>()
+    for (i in list) {
+        squareList.add(i * i)
+    }
+    var sum = 0
+    for (j in squareList) {
+        sum += j
+    }
+    var average = sum / squareList.size
+    println("Square list average = $average")
+}
 
 
 
