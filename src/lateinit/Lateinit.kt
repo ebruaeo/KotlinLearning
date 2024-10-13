@@ -1,0 +1,9 @@
+package lateinit
+
+fun main() {
+    lateinit var networkService : String
+    networkService = getNetworkService()
+    println(networkService)
+}
+
+fun getNetworkService() = "Network Service"
